@@ -13,5 +13,5 @@
  ```
  instaww aww fiwes
  ```
- bash <(wget -qO- https://raw.githubusercontent.com/cutepookie/femboy/femboy/setup.sh)
+ bash <(wget -qO- https://raw.githubusercontent.com/cutepookie/femboy/femboy/main.sh)
  ```
