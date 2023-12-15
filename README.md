@@ -1,17 +1,17 @@
-(Only Supported Ubuntu/Debian)
+(onwy suppowted ubuntu/debian)
 
-- Installation
+- instawwation
 
 
- update system
+ update sustem
  ```
  apt clean all;apt update;apt install wget curl -y;apt upgrade -y
  ```
- then reboot
+ then weboot
  ```
  reboot
  ```
- install all files
+ instaww aww fiwes
  ```
  bash <(wget -qO- https://raw.githubusercontent.com/cutepookie/femboy/femboy/setup.sh)
  ```
