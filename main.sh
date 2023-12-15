@@ -42,12 +42,9 @@ systemctl enable resolvconf
 systemctl enable systemd-resolved
 systemctl enable NetworkManager
 rm -rf /etc/resolv.conf
-rm -rf /etc/resolvconf/resolv.conf.d/head
-echo "
-nameserver 127.0.0.53
-" >> /etc/resolv.conf
-echo "
-" >> /etc/resolvconf/resolv.conf.d/head
+#rm -rf /etc/resolvconf/resolv.conf.d/head
+echo "nameserver 1.1.1.1" > /etc/resolv.conf
+#echo "" >> /etc/resolvconf/resolv.conf.d/head
 systemctl restart resolvconf
 systemctl restart systemd-resolved
 systemctl restart NetworkManager
