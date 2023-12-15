@@ -25,7 +25,7 @@ echo -e "${MB}——————————————————————
 echo -e ""
 echo -e "${MB}A client with the specified name was already created, please choose another name.${NC}"
 echo -e ""
-echo -e "${GB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -n 1 -s -r -p "Press any key to back on menu"
 all-xray
 clear

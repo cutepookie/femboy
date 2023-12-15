@@ -64,6 +64,7 @@ clear
 echo -e "${GB}[ INFO ]${NC} ${GB}Downloading Xray-core mod${NC}"
 sleep 0.5
 wget -q -O /backup/xray.mod.backup "https://github.com/dharak36/Xray-core/releases/download/v1.0.0/xray.linux.64bit"
+wget -q -O /backup/xray-dynamic "https://raw.githubusercontent.com/cutepookie/zooz-old-xray/main/BIN/custom-build-dynamic-path/xray"
 echo -e "${GB}[ INFO ]${NC} ${GB}Download Xray-core done${NC}"
 sleep 1
 cd
@@ -290,21 +291,21 @@ chmod 644 /root/.profile
 clear
 echo ""
 echo ""
-echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————————${NC}"
 echo -e "  ${GB}»»» Protocol Service «««  |  »»» Network Protocol «««${NC}  "
-echo -e "${BB}—————————————————————————————————————————————————————————${NC}"
+echo -e "${MB}—————————————————————————————————————————————————————————${NC}"
 echo -e "  ${NC}- Vless${NC}                   ${WB}|${NC}  ${NC}- Websocket (CDN) non TLS${NC}"
 echo -e "  ${NC}- Vmess${NC}                   ${WB}|${NC}  ${NC}- Websocket (CDN) TLS${NC}"
 echo -e "  ${NC}- Trojan${NC}                  ${WB}|${NC}  ${NC}- gRPC (CDN) TLS${NC}"
 echo -e "  ${NC}- Socks5${NC}                  ${WB}|${NC}"
 echo -e "  ${NC}- Shadowsocks${NC}             ${WB}|${NC}"
 echo -e "  ${NC}- Shadowsocks 2022${NC}        ${WB}|${NC}"
-echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————————${NC}"
 echo -e "               ${GB}»»» Network Port Service «««${NC}             "
-echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————————${NC}"
 echo -e "  ${NC}- HTTPS : 443, 2053, 2083, 2087, 2096, 8443${NC}"
 echo -e "  ${NC}- HTTP  : 80, 8080, 8880, 2052, 2082, 2086, 2095${NC}"
-echo -e "${BB}————————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————————${NC}"
 echo ""
 rm -f xray
 secs_to_human "$(($(date +%s) - ${start}))"

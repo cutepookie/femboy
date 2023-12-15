@@ -13,9 +13,9 @@ GREEN='\033[0;32m'
 clear
 echo -n >/tmp/other.txt
 data=($(cat /usr/local/etc/xray/config.json | grep '^#&' | cut -d ' ' -f 2 | sort | uniq))
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "              ${GB}Trojan User Login Account${NC}             "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 for akun in "${data[@]}"; do
 if [[ -z "$akun" ]]; then
 akun="Tidak Ada"
@@ -40,7 +40,7 @@ jum2=$(cat /tmp/ipvmess.txt | nl)
 echo -e "user :${GREEN} ${akun} ${NC}
 ${RED}Online Jam ${NC}: ${lastlogin} wib";
 echo "$jum2"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 fi
 rm -rf /tmp/ipvmess.txt
 done

@@ -11,18 +11,18 @@ WB='\e[37;0m'
 clear
 domain=$(cat /usr/local/etc/xray/domain)
 until [[ $user =~ ^[a-zA-Z0-9_]+$ && ${user_EXISTS} == '0' ]]; do
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                  \E[42;1;37mAdd Trojan Account${NC}                "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -rp "User: " -e user
 user_EXISTS=$(grep -w $user /usr/local/etc/xray/config.json | wc -l)
 if [[ ${user_EXISTS} == '1' ]]; then
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                  \E[42;1;37mAdd Trojan Account ${NC}                "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "${GB}A client with the specified name was already created, please choose another name.${NC}"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -n 1 -s -r -p "Press any key to back on menu"
 add-trojan
 fi

@@ -12,25 +12,25 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#÷ " "/usr/local/etc/xray/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                ${GB}Extend Socks5 Account${NC}               "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "  ${GB}You have no existing clients!${NC}"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 socks
 fi
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                ${GB}Extend Socks5 Account${NC}               "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e " ${GB}User  Expired${NC}  "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 grep -E "^#÷ " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
 echo ""
 echo -e "${GB}tap enter to go back${NC}"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -rp "Input Username : " user
 if [ -z $user ]; then
 socks
@@ -46,12 +46,12 @@ exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
 sed -i "/#÷ $user/c\#÷ $user $exp4" /usr/local/etc/xray/config.json
 systemctl restart xray
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "           ${GB}Socks5 Account Success Extended${NC}          "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e " ${GB}Client Name :${NC} $user"
 echo -e " ${GB}Expired On  :${NC} $exp4"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 clear

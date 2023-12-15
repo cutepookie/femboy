@@ -12,24 +12,24 @@ clear
 NUMBER_OF_CLIENTS=$(grep -c -E "^#@ " "/usr/local/etc/xray/config.json")
 if [[ ${NUMBER_OF_CLIENTS} == '0' ]]; then
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                ${RB}Delete Vmess Account${NC}                "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "  ${RB}You have no existing clients!${NC}"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -n 1 -s -r -p "Press any key to back on menu"
 vmess
 fi
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "                ${RB}Delete Vmess Account${NC}                "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e " ${RB}User  Expired${NC}  "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 grep -E "^#@ " "/usr/local/etc/xray/config.json" | cut -d ' ' -f 2-3 | column -t | sort | uniq
 echo ""
 echo -e "${RB}tap enter to go back${NC}"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 read -rp "Input Username : " user
 if [ -z $user ]; then
 vmess
@@ -40,12 +40,12 @@ rm -rf /var/www/html/vmess/vmess-$user.txt
 rm -rf /user/log-vmess-$user.txt
 systemctl restart xray
 clear
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e "           ${RB}Vmess Account Success Deleted${NC}            "
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo -e " ${RB}Client Name :${NC} $user"
 echo -e " ${RB}Expired On  :${NC} $exp"
-echo -e "${BB}————————————————————————————————————————————————————${NC}"
+echo -e "${MB}————————————————————————————————————————————————————${NC}"
 echo ""
 read -n 1 -s -r -p "Press any key to back on menu"
 clear
